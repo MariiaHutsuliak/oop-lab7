@@ -1,0 +1,8 @@
+//
+// Created by user on 07.04.2024.
+//
+
+#ifndef LAB7_DOUBLYLINKEDLIST_H
+#define LAB7_DOUBLYLINKEDLIST_H
+
+#endif //LAB7_DOUBLYLINKEDLIST_H
