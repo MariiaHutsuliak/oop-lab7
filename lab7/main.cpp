@@ -1,7 +1,9 @@
 #include <iostream>
 #include "SinglyLinkedList.h"
+#include "DoublyLinkedList.h"
 using namespace std;
 int main() {
+    /*
     SinglyLinkedList<int> list;
 
     list.insertAtBeginning(10);
@@ -42,6 +44,41 @@ int main() {
 
     cout << "List after removing element at index " << removeIndex << ":" << endl;
 
+    list.display(); */
+
+    DoublyLinkedList<int> list;
+
+    list.insertAtBeginning(10);
+    list.insertAtBeginning(20);
+    list.insertAtBeginning(30);
+
+    list.insertAtEnd(40);
+    list.insertAtEnd(50);
+
+    cout << "List data:" << endl;
+    list.display();
+
+    list.removeFront();
+    list.removeBack();
+
+    cout << "List data after removing front and back elements:" << endl;
+    list.display();
+
+    int searchValue = 20;
+    if (list.search(searchValue)) {
+        cout << searchValue << " is found in the list." << endl;
+    } else {
+        cout << searchValue << " is not found in the list." << endl;
+    }
+
+    list.insertAtIndex(1, 25);
+
+    cout << "List data after inserting element at index 1:" << endl;
+    list.display();
+
+    list.removeAtIndex(2);
+
+    cout << "List data after removing element at index 2:" << endl;
     list.display();
     return 0;
 }
