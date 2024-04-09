@@ -4,6 +4,7 @@
 using namespace std;
 int main() {
     /*
+    try{
     SinglyLinkedList<int> list;
 
     list.insertAtBeginning(10);
@@ -11,19 +12,19 @@ int main() {
     list.insertAtBeginning(30);
 
     cout << "List after adding elements at the beginning:" << endl;
-    list.display();
+    cout << list << endl;
 
     list.insertAtEnd(40);
     list.insertAtEnd(50);
 
     cout << "List after adding elements at the end:" << endl;
-    list.display();
+    cout << list << endl;
 
     list.removeFront();
     list.removeBack();
 
     cout << "List after removing elements from front and back:" << endl;
-    list.display();
+    cout << list << endl;
 
     int searchValue = 20;
     if (list.search(searchValue)) {
@@ -37,15 +38,18 @@ int main() {
     list.insertAtIndex(index, insertValue);
 
     cout << "List after inserting element at index " << index << ":" << endl;
-    list.display();
+    cout << list << endl;
 
     size_t removeIndex = 2;
     list.removeAtIndex(removeIndex);
 
     cout << "List after removing element at index " << removeIndex << ":" << endl;
 
-    list.display(); */
-
+    cout << list << endl;
+     } catch (const exception &e) {
+        cerr << "Exception: " << e.what() << endl;
+    } */
+    try {
     DoublyLinkedList<int> list;
 
     list.insertAtBeginning(10);
@@ -56,13 +60,13 @@ int main() {
     list.insertAtEnd(50);
 
     cout << "List data:" << endl;
-    list.display();
+    cout << list << endl;
 
     list.removeFront();
     list.removeBack();
 
     cout << "List data after removing front and back elements:" << endl;
-    list.display();
+    cout << list << endl;
 
     int searchValue = 20;
     if (list.search(searchValue)) {
@@ -74,11 +78,14 @@ int main() {
     list.insertAtIndex(1, 25);
 
     cout << "List data after inserting element at index 1:" << endl;
-    list.display();
+    cout << list << endl;
 
-    list.removeAtIndex(2);
+    list.removeAtIndex(23456);
 
     cout << "List data after removing element at index 2:" << endl;
-    list.display();
+    cout << list << endl;
+        } catch (const exception &e) {
+        cerr << "Exception: " << e.what() << endl;
+    }
     return 0;
 }

@@ -96,6 +96,9 @@ public:
 
     bool search(const T& value){
         shared_ptr<Node> current = head;
+        if (!head){
+            throw out_of_range("List is empty");
+        }
         while (current) {
             if (current->data == value) {
                 return true;
@@ -105,13 +108,15 @@ public:
         return false;
     }
 
-    void display() const {
-        shared_ptr<Node> current = head;
+    friend ostream &operator<<(ostream &os, const DoublyLinkedList<T> &obj) {
+        Node *current = obj.head.get();
+        os << "List data: " << endl;
         while (current != nullptr) {
-            cout << current->data << " ";
-            current = current->next;
+            os << current->data << " ";
+            current = current->next.get();
         }
-        cout << endl;
+        os << endl;
+        return os;
     }
 
     void insertAtIndex(size_t index, const T& value){

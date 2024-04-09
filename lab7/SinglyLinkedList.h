@@ -101,16 +101,16 @@ public:
         return false;
     }
 
-    void display() const {
-        Node* current = head.get();
-        cout << "List data: " << endl;
+    friend ostream &operator<<(ostream &os, const SinglyLinkedList<T> &obj) {
+        Node *current = obj.head.get();
+        os << "List data: " << endl;
         while (current != nullptr) {
-            cout << current->data << " ";
+            os << current->data << " ";
             current = current->next.get();
         }
-        cout << endl;
+        os << endl;
+        return os;
     }
-
 
     void insertAtIndex(size_t index, const T& value){
         checkIndex(index);
