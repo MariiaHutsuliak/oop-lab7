@@ -111,10 +111,6 @@ int main() {
     q.enqueueFront("apple");
     q.enqueueRear("banana");
     q.enqueueRear("orange");
-    cout << "Dequeued from front: " << q.dequeueFront() << endl;
     q.enqueueFront("grape");
-    while (!q.isEmpty()) {
-        cout << "Dequeued from front: " << q.dequeueFront() << endl;
-    }
     return 0;
 }

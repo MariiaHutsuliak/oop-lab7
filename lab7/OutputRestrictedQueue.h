@@ -26,6 +26,7 @@ public:
 
     void enqueueFront(const T& element) {
         Node* newNode = new Node(element);
+        cout << "Inserting to front: " << element << endl;
         if (isEmpty()) {
             front = rear = newNode;
         } else {
@@ -37,6 +38,7 @@ public:
 
     void enqueueRear(const T& element) {
         Node* newNode = new Node(element);
+        cout << "Inserting to rear: " << element << endl;
         if (isEmpty()) {
             front = rear = newNode;
         } else {
@@ -51,8 +53,9 @@ public:
             cerr << "Queue is empty" << endl;
             exit(1);
         }
-        T elements = front->data;
+        T element = front->data;
         Node* temp = front;
+        cout << "Deleting: " << element << endl;
         if (front == rear) {
             front = rear = nullptr;
         } else {
@@ -60,7 +63,7 @@ public:
             front->prev = nullptr;
         }
         delete temp;
-        return elements;
+        return element;
     }
 
     bool isEmpty() {
